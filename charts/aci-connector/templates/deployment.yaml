@@ -9,6 +9,7 @@ spec:
       labels:
         app: {{ template "fullname" . }}
     spec:
+      serviceAccountName: "{{ .Values.serviceAccount }}"
       containers:
       - name: {{ template "fullname" . }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
